@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lafız — Türk hukuku için lafza sadık yapay zekâ</title>
+<meta name="description" content="Lafız, kanun maddesini kaynağından birebir alıp yapılandırılmış hukuki analize dönüştüren, her atfı ayrı bir doğrulayıcı ajanla kontrol eden Türk hukuku iş akışı motorudur. Claude üzerinde çalışır.">
+<style>
+  :root{
+    --bg:#f7f5f0; --ink:#1b1a17; --muted:#5d5a52; --line:#dcd7cc;
+    --card:#ffffff; --accent:#8b1e2d; --accent-ink:#ffffff; --soft:#efe9dc;
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+    --serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#141311; --ink:#f1ede4; --muted:#b3ad9f; --line:#2c2a25;
+      --card:#1d1b18; --accent:#d8515f; --accent-ink:#141311; --soft:#242119;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#141311; --ink:#f1ede4; --muted:#b3ad9f; --line:#2c2a25;
+    --card:#1d1b18; --accent:#d8515f; --accent-ink:#141311; --soft:#242119;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:960px;margin:0 auto;padding:0 16px}
+  header{padding:22px 0;border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{font-family:var(--serif);font-size:26px;letter-spacing:.5px;text-decoration:none}
+  .brand small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:18px}
+  nav a:hover{color:var(--ink)}
+  .hero{padding:64px 0 40px}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(32px,5vw,52px);line-height:1.12;margin:0 0 18px;max-width:18ch}
+  .hero p{font-size:18px;color:var(--muted);max-width:60ch;margin:0 0 26px}
+  .cta{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600}
+  .cta.secondary{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:10px}
+  .tag{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:4px 10px;border-radius:999px;margin-bottom:18px}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 8px}
+  .lead{color:var(--muted);margin:0 0 26px;max-width:62ch}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .step{font-family:var(--mono);font-size:12px;color:var(--accent);margin-bottom:8px}
+  .stats{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .stat{background:var(--soft);border-radius:12px;padding:18px}
+  .stat b{display:block;font-family:var(--serif);font-size:34px;line-height:1;margin-bottom:6px}
+  .stat span{font-size:14px;color:var(--muted)}
+  .sample{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;font-size:14px}
+  .sample .h{font-family:var(--serif);font-size:18px;color:var(--accent);margin-bottom:6px}
+  .sample .law{color:var(--muted);font-style:italic;margin-bottom:10px}
+  .sample ul{margin:0;padding-left:18px;color:var(--muted)}
+  .sample li{margin:3px 0}
+  .principles li{margin:8px 0}
+  .en{border-left:3px solid var(--accent);padding-left:16px;color:var(--muted);font-size:15px}
+  footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+  @media (max-width:600px){ nav{display:none} .cta.secondary{margin-left:0;margin-top:10px} }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#">Lafız <small>Türk hukuku · yapay zekâ</small></a>
+    <nav>
+      <a href="#nasil">Nasıl çalışır</a>
+      <a href="#kanit">Bugün ne var</a>
+      <a href="#kimin">Kimin için</a>
+      <a href="#ilke">İlkeler</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <span class="tag">Kanunun sözü, kaynağından</span>
+      <h1>Türk hukuku için lafza sadık yapay zekâ iş akışı motoru</h1>
+      <p>Lafız, kanun maddesini mevzuat.gov.tr'den birebir alır, sabit yedi başlıklı yapıda analiz yazar ve her atfı bağımsız bir doğrulayıcı ajanla kontrol eder. Çıktı kaynak atıflı, biçimli ve bir hukukçunun onayına hazırdır.</p>
+      <a class="cta" href="#iletisim">Erken erişim için yazın</a>
+      <a class="cta secondary" href="#nasil">Nasıl çalışır</a>
+    </div>
+  </div>
+
+  <section id="nasil">
+    <div class="wrap">
+      <h2>Nasıl çalışır</h2>
+      <p class="lead">Üretken modelin "ezberinden" değil, kanunun metninden başlarız. Yazan ajan ile doğrulayan ajan ayrıdır; biri diğerinin hatasını geçirmez.</p>
+      <div class="grid">
+        <div class="card"><div class="step">01 · KAYNAK</div><h3>Madde birebir çekilir</h3><p>Fıkra fıkra lafız mevzuat.gov.tr'den alınır; içtihat için Yargıtay karar arama kullanılır. Metin değiştirilmez, altına açıklama gelir.</p></div>
+        <div class="card"><div class="step">02 · YAZICI AJAN</div><h3>Yedi başlıklı sabit yapı</h3><p>Madde metni · unsurlar · somutlaştırma · doktrin · Yargıtay içtihadı · bağlantılı maddeler · sınav/pratik. Her madde aynı iskelette, karşılaştırılabilir.</p></div>
+        <div class="card"><div class="step">03 · DOĞRULAYICI AJAN</div><h3>Atıf ve fıkra kontrolü</h3><p>Bağımsız bir Claude çağrısı her madde ve fıkra numarasını, çapraz atfı ve iç tutarlılığı denetler; uyuşmayan satır işaretlenir, geçmez.</p></div>
+        <div class="card"><div class="step">04 · ÇIKTI</div><h3>DOCX / Pages, ölçülü biçim</h3><p>Renk, punto ve girinti kuralları ölçülmüş bir standarda (KOVL) oturur; çıktı kayıpsız olarak Pages ve Word'e geçer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kanit">
+    <div class="wrap">
+      <h2>Bugün ne var</h2>
+      <p class="lead">Motor bir yol haritası değil; Ağustos–Ekim 2026'da Claude Code ve Claude API üzerinde kendi hukuk eğitimimiz için üretimde çalıştı. Rakamlar üretilen dosyalardan sayıldı.</p>
+      <div class="stats">
+        <div class="stat"><b>1.500+</b><span>madde girdisi — TMK, TBK, TTK, TCK, CMK ve yan kanunlar</span></div>
+        <div class="stat"><b>5 kanun</b><span>Borçlar, Medeni, Eşya, Ticaret, Ceza Usul madde incelemeleri tamam</span></div>
+        <div class="stat"><b>~2.100 sayfa</b><span>altı dersin taranmış ders notu metne döküldü, 640 bin+ kelime</span></div>
+        <div class="stat"><b>2 ajan</b><span>yazıcı + doğrulayıcı; Sonnet varsayılan, kritik pasajlarda Opus</span></div>
+      </div>
+      <div style="height:18px"></div>
+      <div class="sample">
+        <div class="h">TBK 138 : Aşırı ifa güçlüğü</div>
+        <div class="law">TBK 138/1 : Sözleşmenin yapıldığı sırada taraflarca öngörülmeyen ve öngörülmesi de beklenmeyen olağanüstü bir durum, borçludan kaynaklanmayan bir sebeple ortaya çıkar ve sözleşmenin yapıldığı sırada mevcut olguları, kendisinden ifanın istenmesini dürüstlük kurallarına aykırı düşecek derecede borçlu aleyhine değiştirir ve borçlu da borcunu henüz ifa etmemiş veya ifanın aşırı ölçüde güçleşmesinden doğan haklarını saklı tutarak ifa etmiş olursa borçlu, hâkimden sözleşmenin yeni koşullara uyarlanmasını isteme, bu mümkün olmadığı takdirde sözleşmeden dönme hakkına sahiptir. Sürekli edimli sözleşmelerde borçlu, kural olarak dönme hakkının yerine fesih hakkını kullanır.</div>
+        <ul>
+          <li><b>Koşullar :</b> (1) olağanüstü ve öngörülemez durum &amp; (2) borçludan kaynaklanmaması &amp; (3) dürüstlük kuralına aykırı ağırlaşma &amp; (4) ifa edilmemiş ya da hak saklı tutularak ifa edilmiş olması.</li>
+          <li><b>Sonuç :</b> önce uyarlama, mümkün değilse dönme; sürekli edimli sözleşmelerde kural olarak fesih (TBK 138/1 son cümle).</li>
+          <li><b>Bağlantılı :</b> TBK 136 (ifa imkânsızlığı) ile sınır; TMK 2 dürüstlük kuralı.</li>
+          <li><b>Doğrulayıcı :</b> 4 atıf kontrol edildi, 0 uyuşmazlık.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="kimin">
+    <div class="wrap">
+      <h2>Kimin için</h2>
+      <p class="lead">Önce kendimiz olduğumuz kullanıcı, sonra işin ağırlığını taşıyan küçük bürolar.</p>
+      <div class="grid">
+        <div class="card"><h3>1 · Hukuk öğrencisi, denklik adayı, stajyer</h3><p>Madde incelemesi, ders notu düzeni, sınav odaklı araştırma notu. Bugün kendi eğitimimiz için kullandığımız şeyin aynısı.</p></div>
+        <div class="card"><h3>2 · Küçük avukat büroları</h3><p>Dosya özeti, dilekçe ilk taslağı, müvekkil yazışması ve atıf doğrulama. Avukat onaylamadan hiçbir çıktı dışarı çıkmaz.</p></div>
+        <div class="card"><h3>Ne değiliz</h3><p>İçtihat veritabanı değiliz; Lexpera ve Kazancı gibi kaynakların üstünde çalışan iş akışı katmanıyız. Hukuki görüş vermeyiz, hukukçunun işini hızlandırırız.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ilke">
+    <div class="wrap">
+      <h2>İlkeler</h2>
+      <ul class="principles">
+        <li><b>Lafız önce.</b> Her çıktı kanunun birebir metninden başlar; model metni yeniden yazamaz.</li>
+        <li><b>İnsan onayı.</b> Hukuk, Anthropic Kullanım Politikası'nda yüksek riskli alandır. Müvekkile giden her çıktıyı nitelikli bir hukukçu inceler; biz bunu kısıt değil, ürün tasarımı sayarız.</li>
+        <li><b>Açıklama.</b> Yapay zekâ kullanımı kullanıcıya ve müvekkile baştan söylenir.</li>
+        <li><b>Ölçüm.</b> Atıf doğruluğu, uyuşmazlık sayısı ve inceleme süresi her çalıştırmada kaydedilir.</li>
+      </ul>
+      <p class="en"><b>In English:</b> Lafız is a source-faithful legal AI workflow engine for Turkish law, built on Claude. A writer agent drafts article-by-article analysis from the verbatim statute text; an independent verifier agent checks every citation. Already in production for our own legal studies: 1,500+ article entries across five codes and ~2,100 pages of lecture notes transcribed. First users: law students and trainee lawyers in Türkiye; next: small law firms, always with lawyer sign-off and AI disclosure.</p>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <div class="wrap">
+      <h2>İletişim</h2>
+      <p class="lead">Ankara. Kurucular: Strasbourg Hukuk Fakültesi mezunu, Ankara Üniversitesi denklik sürecinde bir hukukçu ve bir yapay zekâ otomasyon operatörü. 2026'da kuruldu, öz kaynakla.</p>
+      <p><a class="cta" href="mailto:info@lafiz.ai">info@lafiz.ai</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Lafız · Ankara</span>
+    <span>Claude (Anthropic) üzerinde çalışır · Bu site hukuki görüş değildir.</span>
+  </div>
+</footer>
+</body>
+</html>
