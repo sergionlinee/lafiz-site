@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,169 +9,219 @@
 <meta property="og:description" content="Kanunun sözü kaynağından. Yazıcı ajan yazar, doğrulayıcı ajan her atfı kontrol eder, hukukçu onaylar.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lafizai.com/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238b1e2d'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23fff' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0b0b0d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23e5484d'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='38' fill='%23fff' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f8f6f1; --bg2:#f1ede4; --ink:#171613; --ink2:#3f3c35; --muted:#6b675d; --line:#e2dcd0; --line2:#cfc7b8;
-    --card:#ffffff; --accent:#8b1e2d; --accent2:#b3303f; --on-accent:#ffffff; --ok:#1f6f45; --okbg:#e7f3ec; --warn:#8a5a00; --warnbg:#fbf1dc;
-    --serif:"Newsreader","Iowan Old Style",Georgia,serif; --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
-    --r:14px; --maxw:1080px;
+    --bg:#0b0b0d; --bg2:#121216; --bg3:#18181d; --ink:#f4f2ee; --ink2:#c9c6bf; --muted:#8e8b84; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+    --card:rgba(255,255,255,.03); --card2:rgba(255,255,255,.055);
+    --accent:#e5484d; --accent2:#ff7a7f; --accent-soft:rgba(229,72,77,.14); --on-accent:#fff;
+    --ok:#4ade80; --ok-soft:rgba(74,222,128,.12); --warn:#fbbf24; --warn-soft:rgba(251,191,36,.12);
+    --glow:rgba(229,72,77,.35);
+    --display:"Instrument Serif",Georgia,serif; --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+    --r:18px; --maxw:1140px;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#121110; --bg2:#1a1816; --ink:#f2eee6; --ink2:#d6d0c4; --muted:#a39d90; --line:#2a2723; --line2:#3a362f;
-      --card:#1b1917; --accent:#d9505f; --accent2:#e9707d; --on-accent:#121110; --ok:#6fc396; --okbg:#16291f; --warn:#e3b55f; --warnbg:#2b2411;
+  :root[data-theme="light"]{
+    --bg:#f7f6f2; --bg2:#ffffff; --bg3:#f0eee8; --ink:#14131a; --ink2:#3d3b45; --muted:#6f6c76; --line:rgba(20,19,26,.09); --line2:rgba(20,19,26,.16);
+    --card:rgba(255,255,255,.7); --card2:rgba(255,255,255,.95);
+    --accent:#c5343a; --accent2:#e5484d; --accent-soft:rgba(197,52,58,.1); --on-accent:#fff;
+    --ok:#15803d; --ok-soft:rgba(21,128,61,.1); --warn:#a16207; --warn-soft:rgba(161,98,7,.1);
+    --glow:rgba(197,52,58,.22);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]):not([data-theme="light"]){
+      --bg:#f7f6f2; --bg2:#ffffff; --bg3:#f0eee8; --ink:#14131a; --ink2:#3d3b45; --muted:#6f6c76; --line:rgba(20,19,26,.09); --line2:rgba(20,19,26,.16);
+      --card:rgba(255,255,255,.7); --card2:rgba(255,255,255,.95); --accent:#c5343a; --accent2:#e5484d; --accent-soft:rgba(197,52,58,.1);
+      --ok:#15803d; --ok-soft:rgba(21,128,61,.1); --warn:#a16207; --warn-soft:rgba(161,98,7,.1); --glow:rgba(197,52,58,.22);
     }
-  }
-  :root[data-theme="dark"]{
-    --bg:#121110; --bg2:#1a1816; --ink:#f2eee6; --ink2:#d6d0c4; --muted:#a39d90; --line:#2a2723; --line2:#3a362f;
-    --card:#1b1917; --accent:#d9505f; --accent2:#e9707d; --on-accent:#121110; --ok:#6fc396; --okbg:#16291f; --warn:#e3b55f; --warnbg:#2b2411;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   html,body{margin:0}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 50% at 50% 0%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 0%,#000 20%,transparent 70%)}
   a{color:inherit}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-  h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0}
-  h2{font-size:clamp(28px,3.4vw,38px);line-height:1.15}
-  h3{font-size:20px;line-height:1.3}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative;z-index:1}
+  h1,h2,h3{margin:0;font-weight:500;letter-spacing:-.02em}
+  h2{font-family:var(--display);font-size:clamp(34px,4.4vw,56px);line-height:1.02}
+  h2 em{font-style:italic;color:var(--accent2)}
+  h3{font-size:19px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
   p{margin:0}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-  .lead{font-size:18px;color:var(--ink2);max-width:62ch}
-  .muted{color:var(--muted)}
-  section{padding:84px 0}
-  section + section{border-top:1px solid var(--line)}
-  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on-accent);padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid transparent;transition:background .15s}
-  .btn:hover{background:var(--accent2)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .eyebrow::before{content:"";width:18px;height:1px;background:var(--accent)}
+  .lead{font-size:18px;color:var(--ink2);max-width:60ch}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:13px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid transparent;transition:transform .15s,box-shadow .15s,background .15s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px -12px rgba(0,0,0,.6)}
+  .btn.primary{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 0 var(--glow)}
+  .btn.primary:hover{background:var(--accent2);box-shadow:0 12px 40px -10px var(--glow)}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
-  .btn.ghost:hover{background:var(--bg2)}
+  .btn.ghost:hover{background:var(--card2)}
+  section{padding:96px 0;position:relative}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .delay1{transition-delay:.08s}.delay2{transition-delay:.16s}.delay3{transition-delay:.24s}
 
-  /* nav */
-  .nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
-  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:30;padding:14px 0}
+  .nav .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;height:56px;padding:0 10px 0 16px;border:1px solid var(--line2);border-radius:999px;background:color-mix(in srgb,var(--bg) 70%,transparent);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3)}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:19px;line-height:1}
-  .brand b{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.01em}
-  .brand small{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1;margin-top:3px;font-family:var(--sans)}
-  .nav nav{display:flex;gap:22px}
-  .nav nav a{font-size:14px;color:var(--muted);text-decoration:none}
-  .nav nav a:hover{color:var(--ink)}
-  .nav .btn{padding:9px 14px;font-size:14px}
+  .brand .mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;display:grid;place-items:center;font-family:var(--display);font-style:italic;font-size:20px;line-height:1;box-shadow:0 6px 18px -6px var(--glow)}
+  .brand b{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:0}
+  .nav nav{display:flex;gap:4px}
+  .nav nav a{font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:999px;transition:.15s}
+  .nav nav a:hover{color:var(--ink);background:var(--card2)}
+  .nav .right{display:flex;align-items:center;gap:8px}
+  .tbtn{width:36px;height:36px;border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center}
+  .tbtn svg{width:16px;height:16px}
+  .nav .btn{padding:9px 14px;font-size:13.5px}
 
-  /* hero */
-  .hero{padding:88px 0 72px;background:
-    radial-gradient(900px 420px at 10% -10%, color-mix(in srgb,var(--accent) 10%,transparent), transparent 60%);
-  }
-  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-  .hero h1{font-size:clamp(38px,5.2vw,60px);line-height:1.06;max-width:17ch;margin-bottom:22px}
-  .hero h1 em{font-style:italic;color:var(--accent)}
-  .hero .lead{margin-bottom:30px}
-  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
-  .hero .facts{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
-  .hero .facts span b{color:var(--ink);font-weight:600}
+  /* HERO */
+  .hero{padding:72px 0 56px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:999px;padding:6px 12px 6px 8px;font-size:12.5px;color:var(--ink2);margin-bottom:26px;background:var(--card)}
+  .pill i{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px var(--ok-soft);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--ok-soft)}50%{box-shadow:0 0 0 7px transparent}}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,6.6vw,84px);line-height:.98;letter-spacing:-.025em;max-width:14ch;margin-bottom:24px}
+  .hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .lead{margin-bottom:32px}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+  .hero .facts{display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:var(--muted);font-family:var(--mono)}
+  .hero .facts b{color:var(--ink);font-weight:500}
 
-  /* verifier panel */
-  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 18px 50px -30px rgba(0,0,0,.35);overflow:hidden;font-size:13.5px}
-  .panel .bar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--bg2);font-family:var(--mono);font-size:12px;color:var(--muted)}
-  .panel .bar i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--line2);margin-right:5px}
-  .panel .body{padding:16px 16px 14px}
-  .panel .art{font-family:var(--serif);font-size:19px;color:var(--accent);margin-bottom:4px}
-  .panel .law{color:var(--muted);font-style:italic;line-height:1.5;margin-bottom:12px;border-left:2px solid var(--line2);padding-left:10px}
-  .panel .row{display:flex;gap:10px;padding:7px 0;border-top:1px dashed var(--line)}
-  .panel .row .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);min-width:118px;padding-top:2px}
-  .panel .row .v{color:var(--ink2)}
-  .panel .check{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--okbg);color:var(--ok);font-weight:600;font-size:13px}
-  .panel .check code{font-family:var(--mono);font-weight:500;font-size:12px}
+  /* LIVE CONSOLE */
+  .console{position:relative;border:1px solid var(--line2);border-radius:var(--r);background:linear-gradient(180deg,var(--bg3),var(--bg2));box-shadow:0 40px 100px -40px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.02) inset;overflow:hidden}
+  .console::before{content:"";position:absolute;inset:-40% -20% auto;height:60%;background:radial-gradient(closest-side,var(--glow),transparent);opacity:.5;pointer-events:none}
+  .console .top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--muted);position:relative}
+  .console .top .dots i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--line2);margin-right:6px}
+  .console .top .st{display:inline-flex;align-items:center;gap:6px}
+  .console .top .st i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+  .console .log{padding:16px;font-family:var(--mono);font-size:12.5px;line-height:1.75;min-height:214px;position:relative}
+  .console .ln{display:flex;gap:12px;opacity:0;transform:translateX(-4px);transition:.35s}
+  .console .ln.on{opacity:1;transform:none}
+  .console .ln .t{color:var(--muted);min-width:56px}
+  .console .ln .k{color:var(--accent2);min-width:92px}
+  .console .ln .v{color:var(--ink2)}
+  .console .ln .v b{color:var(--ink);font-weight:500}
+  .console .ln .ok{color:var(--ok)}
+  .console .ln .wn{color:var(--warn)}
+  .console .out{margin:0 16px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 16px;position:relative}
+  .console .out .art{font-family:var(--display);font-size:22px;color:var(--ink);margin-bottom:6px}
+  .console .out .law{font-size:13px;color:var(--muted);font-style:italic;line-height:1.55;border-left:2px solid var(--accent);padding-left:10px;margin-bottom:10px}
+  .console .out .row{display:grid;grid-template-columns:96px 1fr;gap:10px;font-size:12.5px;padding:6px 0;border-top:1px dashed var(--line)}
+  .console .out .row .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:2px}
+  .console .out .row .v{color:var(--ink2)}
+  .console .stamp{position:absolute;right:14px;top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:999px;color:var(--ok);background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 30%,transparent);opacity:0;transform:scale(.9);transition:.3s}
+  .console .stamp.on{opacity:1;transform:none}
+  .cursor::after{content:"▍";color:var(--accent2);animation:blink 1s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
 
-  /* strip */
-  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
-  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .strip .cell{padding:22px 18px;border-left:1px solid var(--line)}
-  .strip .cell:first-child{border-left:0;padding-left:0}
-  .strip b{display:block;font-family:var(--serif);font-size:30px;line-height:1;margin-bottom:6px;font-weight:500}
-  .strip span{font-size:13.5px;color:var(--muted)}
+  /* MARQUEE */
+  .marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden;background:var(--bg2)}
+  .marq .track{display:flex;gap:48px;width:max-content;animation:scroll 40s linear infinite;font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.06em}
+  .marq .track span b{color:var(--ink);font-weight:500}
+  .marq .track span::before{content:"◆";color:var(--accent);margin-right:14px;font-size:9px;vertical-align:middle}
+  @keyframes scroll{to{transform:translateX(-50%)}}
 
-  /* grids */
-  .grid{display:grid;gap:18px}
-  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-  .card h3{margin-bottom:10px}
-  .card p{color:var(--muted);font-size:15px}
-  .card .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);margin-bottom:14px}
-  .card .tag.live{border-color:transparent;background:var(--okbg);color:var(--ok)}
-  .card .tag.soon{border-color:transparent;background:var(--warnbg);color:var(--warn)}
-  .card ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
-  .card li{margin:4px 0}
-  .sechead{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
+  /* BENTO */
+  .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .cell{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:26px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+  .cell:hover{border-color:var(--line2);transform:translateY(-2px)}
+  .cell::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 200px at var(--mx,50%) var(--my,0%),rgba(255,255,255,.05),transparent 60%);pointer-events:none;opacity:0;transition:.3s}
+  .cell:hover::after{opacity:1}
+  .cell .tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);margin-bottom:16px}
+  .cell .tag.live{border-color:transparent;background:var(--ok-soft);color:var(--ok)}
+  .cell .tag.live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+  .cell .tag.soon{border-color:transparent;background:var(--warn-soft);color:var(--warn)}
+  .cell h3{margin-bottom:10px}
+  .cell p{color:var(--muted);font-size:14.5px}
+  .cell ul{margin:14px 0 0;padding:0;list-style:none;color:var(--ink2);font-size:13.5px}
+  .cell li{padding:7px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+  .cell li::before{content:"→";color:var(--accent2);font-family:var(--mono)}
+  .c6{grid-column:span 6}.c4{grid-column:span 4}.c8{grid-column:span 8}.c3{grid-column:span 3}.c12{grid-column:span 12}
+  .num{display:flex;flex-direction:column;justify-content:flex-end;min-height:170px}
+  .num b{font-family:var(--display);font-weight:400;font-size:clamp(44px,5vw,64px);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+  .num span{font-size:13.5px;color:var(--muted)}
+  .sechead{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:44px}
   .sechead .lead{font-size:17px}
 
-  /* pipeline */
-  .pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card)}
-  .pipe .st{padding:24px 22px;border-left:1px solid var(--line);position:relative}
-  .pipe .st:first-child{border-left:0}
-  .pipe .n{font-family:var(--mono);font-size:12px;color:var(--accent);margin-bottom:10px}
-  .pipe h3{font-size:18px;margin-bottom:8px}
-  .pipe p{font-size:14.5px;color:var(--muted)}
-  .pipe .st::after{content:"→";position:absolute;right:-9px;top:26px;font-size:16px;color:var(--line2);background:var(--card);padding:0 3px;z-index:1}
-  .pipe .st:last-child::after{content:none}
+  /* PIPELINE */
+  .pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+  .pipe::before{content:"";position:absolute;left:5%;right:5%;top:33px;height:1px;background:linear-gradient(90deg,transparent,var(--line2) 10%,var(--line2) 90%,transparent)}
+  .pipe .st{position:relative;padding-top:12px}
+  .pipe .dot{width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:var(--bg2);display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--accent2);margin-bottom:18px;position:relative;z-index:1}
+  .pipe h3{font-size:17px;margin-bottom:8px}
+  .pipe p{font-size:14px;color:var(--muted)}
 
-  /* principles */
-  .princ{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .princ .card{display:grid;grid-template-columns:auto 1fr;gap:16px}
-  .princ .ico{width:40px;height:40px;border-radius:10px;background:var(--bg2);display:grid;place-items:center;color:var(--accent);font-family:var(--serif);font-size:20px}
+  /* DIFF */
+  .diff{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .diff .box{border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
+  .diff .hd{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+  .diff .bd{padding:14px 16px;font-size:13.5px;line-height:1.7;color:var(--ink2)}
+  .diff .bd .l{display:flex;gap:10px;padding:4px 0}
+  .diff .bd .l .n{font-family:var(--mono);font-size:11px;color:var(--muted);min-width:22px;padding-top:3px}
+  .diff mark{background:var(--warn-soft);color:var(--warn);padding:0 4px;border-radius:4px;font-weight:600}
+  .diff mark.ok{background:var(--ok-soft);color:var(--ok)}
+  .diff .rep{font-family:var(--mono);font-size:12px}
+  .diff .rep .r{display:flex;justify-content:space-between;padding:7px 0;border-top:1px dashed var(--line)}
+  .diff .rep .r:first-child{border-top:0}
+  .diff .rep .ok{color:var(--ok)} .diff .rep .wn{color:var(--warn)}
 
-  /* roadmap */
-  .road{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .road .card{border-top:3px solid var(--line2)}
-  .road .card.now{border-top-color:var(--accent)}
-  .road .when{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:8px}
+  /* ROAD */
+  .road{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .road .cell{border-top:2px solid var(--line2)}
+  .road .cell.now{border-top-color:var(--accent)}
+  .road .when{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--muted);margin-bottom:10px;text-transform:uppercase}
+  .road .kpi{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--ink2)}
+  .road .kpi b{font-family:var(--mono);font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:4px}
 
-  /* team */
-  .team{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  /* FAQ */
+  .faq details{border-top:1px solid var(--line);padding:20px 0}
+  .faq details:last-of-type{border-bottom:1px solid var(--line)}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;font-size:16.5px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:var(--mono);color:var(--muted);font-size:20px;transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{margin-top:12px;color:var(--muted);max-width:72ch;font-size:15px}
 
-  /* faq */
-  details{border-top:1px solid var(--line);padding:18px 0}
-  details:last-of-type{border-bottom:1px solid var(--line)}
-  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:16.5px}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";font-family:var(--mono);color:var(--muted);font-size:18px}
-  details[open] summary::after{content:"–"}
-  details p{margin-top:10px;color:var(--muted);max-width:70ch}
-
-  /* english */
-  .en{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:auto 1fr;gap:22px}
-  .en .lang{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);padding-top:3px}
+  /* EN */
+  .en{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:30px;display:grid;grid-template-columns:auto 1fr;gap:26px}
+  .en .lang{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--accent2);padding-top:4px}
   .en p{color:var(--ink2);font-size:15.5px}
-  .en p + p{margin-top:10px}
+  .en p + p{margin-top:12px}
 
-  /* contact */
-  .contact{background:var(--ink);color:var(--bg)}
-  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-  .contact h2{color:var(--bg)}
-  .contact p{color:color-mix(in srgb,var(--bg) 72%,transparent)}
-  .contact .btn{background:var(--bg);color:var(--ink)}
-  .contact .btn:hover{background:#fff}
-  .contact .meta{font-size:14px;line-height:1.9}
-  .contact .meta a{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--bg) 35%,transparent)}
+  /* CTA */
+  .cta{padding:40px 0 96px}
+  .cta .box{position:relative;overflow:hidden;border:1px solid var(--line2);border-radius:28px;padding:64px 48px;text-align:center;background:linear-gradient(180deg,var(--bg3),var(--bg2))}
+  .cta .box::before{content:"";position:absolute;inset:auto -10% -60%;height:90%;background:radial-gradient(closest-side,var(--glow),transparent 70%);opacity:.7;pointer-events:none}
+  .cta h2{margin-bottom:14px}
+  .cta p{color:var(--ink2);max-width:52ch;margin:0 auto 28px;position:relative}
+  .cta .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+  .cta .meta{margin-top:22px;font-family:var(--mono);font-size:12px;color:var(--muted);position:relative}
 
-  footer{padding:28px 0 44px;color:var(--muted);font-size:13.5px}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+  footer{padding:10px 0 48px;color:var(--muted);font-size:13px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px}
 
-  @media (max-width:900px){
-    .hero .wrap,.sechead,.contact .wrap,.team,.princ,.road,.g3,.g4,.g2{grid-template-columns:1fr}
-    .pipe{grid-template-columns:1fr} .pipe .st{border-left:0;border-top:1px solid var(--line)} .pipe .st:first-child{border-top:0} .pipe .st::after{content:none}
-    .strip .wrap{grid-template-columns:1fr 1fr} .strip .cell{border-left:0;padding-left:0}
+  @media (max-width:960px){
+    .hero .wrap,.sechead,.diff,.en{grid-template-columns:1fr}
+    .c6,.c4,.c8,.c3{grid-column:span 12}
+    .road{grid-template-columns:1fr}
+    .pipe{grid-template-columns:1fr 1fr} .pipe::before{display:none}
     .nav nav{display:none}
-    .nav .wrap{height:58px}
-    .brand small{display:none}
-    .nav .btn{white-space:nowrap;padding:8px 12px;font-size:13px}
-    section{padding:60px 0}
-    .hero{padding:56px 0 48px}
-    .en{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .hero{padding:40px 0 44px}
+    .hero h1{max-width:none}
+    .cta .box{padding:44px 22px}
+  }
+  @media (max-width:560px){ .pipe{grid-template-columns:1fr} }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .marq .track{animation:none}
+    .pill i{animation:none}
   }
 </style>
 </head>
@@ -179,16 +229,18 @@
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><span class="mark">L</span><span><b>Lafız</b><small>Türk hukuku · yapay zekâ</small></span></a>
-    <nav>
-      <a href="#urun">Ürün</a>
-      <a href="#nasil">Nasıl çalışır</a>
-      <a href="#kanit">Bugün ne var</a>
-      <a href="#ilke">İlkeler</a>
-      <a href="#yol">Yol haritası</a>
-      <a href="#sss">SSS</a>
-    </nav>
-    <a class="btn" href="#iletisim">Erken erişim</a>
+    <div class="bar">
+      <a class="brand" href="#top"><span class="mark">L</span><b>Lafız</b></a>
+      <nav>
+        <a href="#urun">Ürün</a><a href="#nasil">Nasıl çalışır</a><a href="#dogrulayici">Doğrulayıcı</a><a href="#yol">Yol haritası</a><a href="#sss">SSS</a>
+      </nav>
+      <div class="right">
+        <button class="tbtn" id="theme" aria-label="Temayı değiştir" title="Tema">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+        </button>
+        <a class="btn primary" href="#iletisim">Erken erişim</a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -197,186 +249,202 @@
   <div class="hero">
     <div class="wrap">
       <div>
-        <div class="eyebrow">Kanunun sözü, kaynağından</div>
-        <h1>Türk hukuku için <em>lafza sadık</em> yapay zekâ iş akışı motoru</h1>
-        <p class="lead">Lafız, kanun maddesini mevzuat.gov.tr'den birebir alır, sabit yedi başlıklı yapıda analiz yazar ve her atfı bağımsız bir doğrulayıcı ajanla kontrol eder. Çıktı kaynak atıflı, biçimli ve bir hukukçunun onayına hazırdır.</p>
+        <span class="pill"><i></i> Kapalı beta · 2026 Q4 · öğrenci ve stajyer</span>
+        <h1>Kanunun sözü, <em>kaynağından.</em></h1>
+        <p class="lead">Lafız, Türk hukuku için lafza sadık bir yapay zekâ iş akışı motoru. Maddeyi mevzuat.gov.tr'den birebir alır, sabit yapıda analiz yazar, bağımsız bir doğrulayıcı ajan her atfı kontrol eder. Son söz hukukçuda.</p>
         <div class="actions">
-          <a class="btn" href="#iletisim">Erken erişim için yazın</a>
-          <a class="btn ghost" href="#nasil">Nasıl çalışır</a>
+          <a class="btn primary" href="#iletisim">Erken erişim için yazın</a>
+          <a class="btn ghost" href="#nasil">Nasıl çalışır ↓</a>
         </div>
         <div class="facts">
           <span><b>1.500+</b> madde girdisi</span>
           <span><b>5</b> kanun</span>
           <span><b>2</b> bağımsız ajan</span>
-          <span>Claude üzerinde</span>
+          <span><b>Claude</b> üzerinde</span>
         </div>
       </div>
 
-      <div class="panel" aria-label="Örnek çıktı">
-        <div class="bar"><span><i></i><i></i><i></i></span><span>madde-motoru · TBK 138 · doğrulandı</span></div>
-        <div class="body">
-          <div class="art">TBK 138 : Aşırı ifa güçlüğü</div>
-          <div class="law">Sözleşmenin yapıldığı sırada taraflarca öngörülmeyen ve öngörülmesi de beklenmeyen olağanüstü bir durum, borçludan kaynaklanmayan bir sebeple ortaya çıkar ve … borçlu, hâkimden sözleşmenin yeni koşullara uyarlanmasını isteme, bu mümkün olmadığı takdirde sözleşmeden dönme hakkına sahiptir.</div>
-          <div class="row"><div class="k">Koşullar</div><div class="v">(1) olağanüstü ve öngörülemez durum · (2) borçludan kaynaklanmama · (3) dürüstlük kuralına aykırı ağırlaşma · (4) henüz ifa edilmemiş ya da hak saklı tutularak ifa</div></div>
-          <div class="row"><div class="k">Sonuç</div><div class="v">Önce uyarlama; mümkün değilse dönme. Sürekli edimli sözleşmede kural olarak fesih (TBK 138/1 son cümle).</div></div>
-          <div class="row"><div class="k">Bağlantılı</div><div class="v">TBK 136 ifa imkânsızlığı ile sınır · TMK 2 dürüstlük kuralı</div></div>
-          <div class="check"><span>Doğrulayıcı raporu</span><code>4 atıf · 4 eşleşti · 0 uyuşmazlık</code></div>
+      <div class="console" aria-label="Canlı çalışma örneği">
+        <div class="top"><span class="dots"><i></i><i></i><i></i></span><span id="ctitle">madde-motoru · TBK 138</span><span class="st"><i></i> canlı</span></div>
+        <div class="log" id="log"></div>
+        <div class="out" id="out">
+          <span class="stamp" id="stamp">doğrulandı</span>
+          <div class="art" id="oart">TBK 138 : Aşırı ifa güçlüğü</div>
+          <div class="law" id="olaw">Sözleşmenin yapıldığı sırada taraflarca öngörülmeyen ve öngörülmesi de beklenmeyen olağanüstü bir durum … borçlu, hâkimden sözleşmenin yeni koşullara uyarlanmasını isteme, bu mümkün olmadığı takdirde sözleşmeden dönme hakkına sahiptir.</div>
+          <div class="row"><div class="k">Koşullar</div><div class="v" id="o1">(1) olağanüstü ve öngörülemez durum · (2) borçludan kaynaklanmama · (3) dürüstlük kuralına aykırı ağırlaşma · (4) ifa edilmemiş ya da hak saklı tutularak ifa</div></div>
+          <div class="row"><div class="k">Bağlantılı</div><div class="v" id="o2">TBK 136 ifa imkânsızlığı ile sınır · TMK 2 dürüstlük kuralı</div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="strip">
-    <div class="wrap">
-      <div class="cell"><b>1.500+</b><span>madde girdisi — TMK, TBK, TTK, TCK, CMK</span></div>
-      <div class="cell"><b>5 kanun</b><span>Borçlar, Medeni, Eşya, Ticaret, Ceza Usul tamam</span></div>
-      <div class="cell"><b>~2.100 sayfa</b><span>altı dersin ders notu metne döküldü</span></div>
-      <div class="cell"><b>Ağu–Eki 2026</b><span>kendi hukuk eğitimimiz için üretimde</span></div>
+  <div class="marq" aria-hidden="true">
+    <div class="track" id="track">
+      <span><b>TMK</b> Türk Medenî Kanunu</span><span><b>TBK</b> Türk Borçlar Kanunu</span><span><b>TTK</b> Türk Ticaret Kanunu</span><span><b>TCK</b> Türk Ceza Kanunu</span><span><b>CMK</b> Ceza Muhakemesi Kanunu</span><span><b>1.500+</b> madde girdisi</span><span><b>~2.100</b> sayfa ders notu</span><span><b>yazıcı</b> + <b>doğrulayıcı</b></span><span><b>Claude Code</b> orkestrasyonu</span>
     </div>
   </div>
 
   <section id="urun">
     <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">Ürün</div><h2>Dört modül, tek omurga</h2></div>
-        <p class="lead">Hepsi aynı ilkeyle çalışır: kaynak metin kilitli, yazan ve doğrulayan ayrı, son söz hukukçuda. İlk ikisi bugün çalışıyor; diğer ikisi büro pilotuyla geliyor.</p>
+      <div class="sechead reveal">
+        <div><div class="eyebrow">Ürün</div><h2>Dört modül, <em>tek omurga.</em></h2></div>
+        <p class="lead">Hepsi aynı ilkeyle çalışır: kaynak metin kilitli, yazan ve doğrulayan ayrı, son söz hukukçuda. Üçü bugün çalışıyor; dördüncüsü büro pilotuyla geliyor.</p>
       </div>
-      <div class="grid g2">
-        <div class="card"><span class="tag live">Çalışıyor</span><h3>Madde Motoru</h3><p>Kanun maddesi ya da aralığı verilir; her madde mevzuat.gov.tr'deki lafzıyla gelir, altında sabit yapıda inceleme oluşur. Tek madde, aralık ya da liste.</p>
+      <div class="bento">
+        <div class="cell c6 reveal"><span class="tag live">Çalışıyor</span><h3>Madde Motoru</h3><p>Kanun maddesi ya da aralığı verilir; her madde mevzuat.gov.tr'deki lafzıyla gelir, altında yedi başlıklı inceleme oluşur. Tek madde, aralık ya da liste.</p>
           <ul><li>Madde metni · unsurlar · somutlaştırma · doktrin · Yargıtay · bağlantılı maddeler · sınav/pratik</li><li>Hocanın anlatımı transkriptten maddeye bağlanır</li><li>DOCX / Pages'e kayıpsız dışa aktarım</li></ul></div>
-        <div class="card"><span class="tag live">Çalışıyor</span><h3>Not Motoru</h3><p>Ders kaydı, taranmış not ya da transkript; ölçülmüş bir biçim standardına (KOVL) oturan, tekrarı ayıklanmış, madde atıflı ders notuna döner.</p>
-          <ul><li>Renk = rol, punto = büyüklük, girinti merdiveni</li><li>Kanun atıfları otomatik işaretlenir ve doğrulanır</li><li>Sınavda çıkma biçimi her başlıkta ayrı satır</li></ul></div>
-        <div class="card"><span class="tag live">Çalışıyor</span><h3>Doğrulayıcı</h3><p>Yazıcıdan bağımsız ikinci bir Claude çağrısı. Madde ve fıkra numaralarını, çapraz atıfları ve iç tutarlılığı kontrol eder; her çalıştırmada rapor üretir.</p>
+        <div class="cell c6 reveal delay1"><span class="tag live">Çalışıyor</span><h3>Doğrulayıcı</h3><p>Yazıcıdan bağımsız ikinci bir Claude çağrısı. Madde ve fıkra numaralarını, çapraz atıfları ve iç tutarlılığı kaynakla karşılaştırır; her çalıştırmada rapor üretir.</p>
           <ul><li>Uyuşmayan satır geçmez, işaretlenir</li><li>Atıf sayısı, eşleşme, uyuşmazlık kaydı</li><li>Yüksek riskli pasajlarda Opus ile ikinci tur</li></ul></div>
-        <div class="card"><span class="tag soon">Büro pilotu · 2027 Q1</span><h3>Dosya ve Dilekçe</h3><p>Küçük bürolar için dosya özeti, dilekçe ilk taslağı ve müvekkil yazışması. Her çıktı avukat onayından geçer, yapay zekâ kullanımı müvekkile açıklanır.</p>
-          <ul><li>Büronun kendi şablonları ve üslubu</li><li>Atıflar Doğrulayıcı'dan geçmeden çıkmaz</li><li>Belgeler büroda kalır, modele eğitim verisi olmaz</li></ul></div>
+        <div class="cell c4 reveal"><span class="tag live">Çalışıyor</span><h3>Not Motoru</h3><p>Ders kaydı, taranmış not ya da transkript; ölçülmüş bir biçim standardına (KOVL) oturan, tekrarı ayıklanmış, madde atıflı ders notuna döner.</p></div>
+        <div class="cell c4 reveal delay1"><span class="tag soon">Büro pilotu · 2027 Q1</span><h3>Dosya ve Dilekçe</h3><p>Dosya özeti, dilekçe ilk taslağı, müvekkil yazışması. Her çıktı avukat onayından geçer; yapay zekâ kullanımı müvekkile açıklanır.</p></div>
+        <div class="cell c4 num reveal delay2"><b data-count="1500" data-suffix="+">0</b><span>madde girdisi — TMK, TBK, TTK, TCK, CMK ve yan kanunlar. Üretilen dosyalardan sayıldı.</span></div>
       </div>
     </div>
   </section>
 
   <section id="nasil">
     <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">Nasıl çalışır</div><h2>Modelin ezberinden değil, kanunun metninden</h2></div>
+      <div class="sechead reveal">
+        <div><div class="eyebrow">Nasıl çalışır</div><h2>Modelin ezberinden değil, <em>kanunun metninden.</em></h2></div>
         <p class="lead">Üretken model güçlü ama atıfta güvenilmez. Lafız bunu mimariyle çözer: metin kilitlenir, yazan ajanla doğrulayan ajan ayrılır, insan onayı akışın parçasıdır.</p>
       </div>
       <div class="pipe">
-        <div class="st"><div class="n">01 · Kaynak</div><h3>Madde birebir çekilir</h3><p>Fıkra fıkra lafız mevzuat.gov.tr'den; içtihat için Yargıtay karar arama. Metin değiştirilmez, altına açıklama gelir.</p></div>
-        <div class="st"><div class="n">02 · Yazıcı ajan</div><h3>Yedi başlıklı sabit yapı</h3><p>Her madde aynı iskelette yazılır. Hocanın anlatımı, doktrin ve içtihat kendi başlığına girer.</p></div>
-        <div class="st"><div class="n">03 · Doğrulayıcı ajan</div><h3>Atıf ve fıkra kontrolü</h3><p>Bağımsız çağrı her numarayı kaynakla karşılaştırır. Rapor: atıf, eşleşme, uyuşmazlık.</p></div>
-        <div class="st"><div class="n">04 · İnsan onayı</div><h3>Hukukçu son sözü söyler</h3><p>Çıktı DOCX/Pages'e biçimli gider. Müvekkile giden her şey avukat onayından geçer.</p></div>
+        <div class="st reveal"><div class="dot">01</div><h3>Kaynak</h3><p>Fıkra fıkra lafız mevzuat.gov.tr'den; içtihat için Yargıtay karar arama. Metin değiştirilmez, altına açıklama gelir.</p></div>
+        <div class="st reveal delay1"><div class="dot">02</div><h3>Yazıcı ajan</h3><p>Yedi başlıklı sabit yapı. Hocanın anlatımı, doktrin ve içtihat kendi başlığına girer; her madde karşılaştırılabilir.</p></div>
+        <div class="st reveal delay2"><div class="dot">03</div><h3>Doğrulayıcı ajan</h3><p>Bağımsız çağrı her numarayı kaynakla karşılaştırır. Rapor: atıf, eşleşme, uyuşmazlık. Uyuşmayan geçmez.</p></div>
+        <div class="st reveal delay3"><div class="dot">04</div><h3>İnsan onayı</h3><p>Çıktı DOCX/Pages'e biçimli gider. Müvekkile giden her şey nitelikli bir hukukçunun onayından geçer.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="kanit">
+  <section id="dogrulayici">
     <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">Bugün ne var</div><h2>Yol haritası değil, çalışan motor</h2></div>
-        <p class="lead">Ağustos–Ekim 2026'da Claude Code ve Claude API üzerinde kendi hukuk eğitimimiz için üretimde çalıştı. Rakamlar üretilen dosyalardan sayıldı; tahmin değil.</p>
+      <div class="sechead reveal">
+        <div><div class="eyebrow">Doğrulayıcı</div><h2>Aynı model kendi çıktısını <em>onaylayamaz.</em></h2></div>
+        <p class="lead">Yazıcı ajan bir atfı kaydırdığında doğrulayıcı kaynakla karşılaştırır ve satırı işaretler. Aşağıdaki örnek gerçek bir çalıştırma türünü gösterir: bir numara kaymış, diğerleri eşleşmiş.</p>
       </div>
-      <div class="grid g3">
-        <div class="card"><h3>Beş kanun, madde madde</h3><p>Borçlar (TBK 1–200 + ek), Medeni, Eşya, Ticaret ve Ceza Usul. Toplam 1.500'den fazla madde girdisi, her biri yedi başlıklı yapıda ve dışa aktarılmış.</p></div>
-        <div class="card"><h3>Altı dersin notu metne</h3><p>Yaklaşık 2.100 taranmış sayfa; 640 bin kelimeyi aşan transkript. Borçlar, Medeni, Eşya, Ticaret, Ceza Genel ve Ceza Usul.</p></div>
-        <div class="card"><h3>Çok ajanlı orkestrasyon</h3><p>Claude Code skill'leri olarak koşuyor: yazıcı + doğrulayıcı çifti, Sonnet varsayılan, kritik pasajlarda Opus. Uzun bağlam sayesinde bir kanun tek seferde.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kimin">
-    <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">Kimin için</div><h2>Önce kendimiz olduğumuz kullanıcı</h2></div>
-        <p class="lead">Dağıtımı kolay ve hatanın maliyeti sınırlı olan yerden başlıyoruz; sonra işin ağırlığını taşıyan küçük bürolara geçiyoruz.</p>
-      </div>
-      <div class="grid g3">
-        <div class="card"><span class="tag">1 · Şimdi</span><h3>Hukuk öğrencisi, denklik adayı, stajyer</h3><p>Madde incelemesi, ders notu düzeni, sınav odaklı araştırma notu. Bugün kendi eğitimimiz için kullandığımız şeyin aynısı.</p></div>
-        <div class="card"><span class="tag">2 · 2027</span><h3>Küçük avukat büroları</h3><p>Dosya özeti, dilekçe ilk taslağı, müvekkil yazışması ve atıf doğrulama. Avukat onaylamadan hiçbir çıktı dışarı çıkmaz.</p></div>
-        <div class="card"><span class="tag">Ne değiliz</span><h3>Veritabanı değiliz, görüş vermeyiz</h3><p>Lexpera ve Kazancı gibi kaynakların üstünde çalışan iş akışı katmanıyız. Hukuki görüş üretmeyiz; hukukçunun işini hızlandırır ve denetlenebilir kılarız.</p></div>
+      <div class="diff">
+        <div class="box reveal">
+          <div class="hd"><span>yazıcı çıktısı · TBK 138</span><span>taslak</span></div>
+          <div class="bd">
+            <div class="l"><span class="n">01</span><span>Uyarlama şartları sağlanmazsa borçlu <mark class="ok">TBK 136</mark> kapsamında imkânsızlığa başvuramaz; aşırı güçlük imkânsızlık değildir.</span></div>
+            <div class="l"><span class="n">02</span><span>Dürüstlük kuralı ölçütü <mark class="ok">TMK 2</mark>'den gelir; hâkim edim dengesini buna göre tartar.</span></div>
+            <div class="l"><span class="n">03</span><span>Sürekli edimli sözleşmelerde dönme yerine fesih, <mark>TBK 138/2</mark> gereği kuraldır.</span></div>
+            <div class="l"><span class="n">04</span><span>Kısmi ifa hâlinde <mark class="ok">TBK 138/1</mark> hakları saklı tutma şartına bağlıdır.</span></div>
+          </div>
+        </div>
+        <div class="box reveal delay1">
+          <div class="hd"><span>doğrulayıcı raporu</span><span>mevzuat.gov.tr ile karşılaştırıldı</span></div>
+          <div class="bd rep">
+            <div class="r"><span>01 · TBK 136</span><span class="ok">eşleşti</span></div>
+            <div class="r"><span>02 · TMK 2</span><span class="ok">eşleşti</span></div>
+            <div class="r"><span>03 · TBK 138/2</span><span class="wn">uyuşmazlık → 138/1 son cümle</span></div>
+            <div class="r"><span>04 · TBK 138/1</span><span class="ok">eşleşti</span></div>
+            <div class="r"><span>sonuç</span><span class="wn">1 satır işaretlendi · hukukçuya</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="ilke">
     <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">İlkeler</div><h2>Kısıt değil, tasarım kararı</h2></div>
+      <div class="sechead reveal">
+        <div><div class="eyebrow">İlkeler</div><h2>Kısıt değil, <em>tasarım kararı.</em></h2></div>
         <p class="lead">Hukuk, Anthropic Kullanım Politikası'nda yüksek riskli alandır. İnsan incelemesi ve açıklama şartını ürünün içine koyduk; dışarıdan eklenen bir uyarı değil.</p>
       </div>
-      <div class="princ">
-        <div class="card"><div class="ico">§</div><div><h3>Lafız önce</h3><p>Her çıktı kanunun birebir metninden başlar; model metni yeniden yazamaz, yalnızca altına açıklar.</p></div></div>
-        <div class="card"><div class="ico">✓</div><div><h3>Yazan ve doğrulayan ayrı</h3><p>Aynı modelin kendi çıktısını onaylamasına izin vermeyiz. Doğrulayıcı ayrı çağrı, ayrı talimat, ayrı rapor.</p></div></div>
-        <div class="card"><div class="ico">⚖</div><div><h3>İnsan onayı</h3><p>Müvekkile ya da üçüncü kişiye giden her çıktıyı nitelikli bir hukukçu inceler. Akışta bu adım atlanamaz.</p></div></div>
-        <div class="card"><div class="ico">i</div><div><h3>Açıklama</h3><p>Yapay zekâ kullanımı kullanıcıya ve müvekkile oturumun başında söylenir.</p></div></div>
-        <div class="card"><div class="ico">🔒</div><div><h3>Veri büroda kalır</h3><p>Belgeler müşterinin alanında işlenir, model eğitiminde kullanılmaz. KVKK'ya uygun saklama ve silme kuralı baştan tanımlıdır.</p></div></div>
-        <div class="card"><div class="ico">#</div><div><h3>Ölçüm</h3><p>Atıf sayısı, eşleşme oranı, uyuşmazlık ve inceleme süresi her çalıştırmada kaydedilir; güven söylemle değil kayıtla kurulur.</p></div></div>
+      <div class="bento">
+        <div class="cell c4 reveal"><span class="tag">§ Lafız önce</span><h3>Metin kilitli</h3><p>Her çıktı kanunun birebir metninden başlar; model lafzı yeniden yazamaz, yalnızca altına açıklar.</p></div>
+        <div class="cell c4 reveal delay1"><span class="tag">✓ Ayrım</span><h3>Yazan ve doğrulayan ayrı</h3><p>Doğrulayıcı ayrı çağrı, ayrı talimat, ayrı rapor. Kendi kendini onaylama yok.</p></div>
+        <div class="cell c4 reveal delay2"><span class="tag">⚖ Onay</span><h3>İnsan son sözü söyler</h3><p>Müvekkile ya da üçüncü kişiye giden her çıktıyı nitelikli bir hukukçu inceler. Adım atlanamaz.</p></div>
+        <div class="cell c4 reveal"><span class="tag">i Açıklama</span><h3>Baştan söylenir</h3><p>Yapay zekâ kullanımı kullanıcıya ve müvekkile oturumun başında açıklanır.</p></div>
+        <div class="cell c4 reveal delay1"><span class="tag">🔒 Veri</span><h3>Belge büroda kalır</h3><p>Belgeler müşterinin alanında işlenir, model eğitiminde kullanılmaz. KVKK'ya uygun saklama ve silme kuralı baştan tanımlıdır.</p></div>
+        <div class="cell c4 reveal delay2"><span class="tag"># Ölçüm</span><h3>Güven kayıtla kurulur</h3><p>Atıf sayısı, eşleşme oranı, uyuşmazlık ve inceleme süresi her çalıştırmada kaydedilir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kanit">
+    <div class="wrap">
+      <div class="sechead reveal">
+        <div><div class="eyebrow">Bugün ne var</div><h2>Yol haritası değil, <em>çalışan motor.</em></h2></div>
+        <p class="lead">Ağustos–Ekim 2026'da Claude Code ve Claude API üzerinde kendi hukuk eğitimimiz için üretimde çalıştı. Rakamlar üretilen dosyalardan sayıldı; tahmin değil.</p>
+      </div>
+      <div class="bento">
+        <div class="cell c3 num reveal"><b data-count="5">0</b><span>kanun: Borçlar, Medeni, Eşya, Ticaret, Ceza Usul</span></div>
+        <div class="cell c3 num reveal delay1"><b data-count="2100" data-prefix="~">0</b><span>taranmış sayfa ders notu metne döküldü</span></div>
+        <div class="cell c3 num reveal delay2"><b data-count="640" data-suffix="K+">0</b><span>kelime transkript, altı ders</span></div>
+        <div class="cell c3 num reveal delay3"><b>2</b><span>ajan: yazıcı + doğrulayıcı; Sonnet varsayılan, kritik pasajlarda Opus</span></div>
+        <div class="cell c6 reveal"><span class="tag">1 · Şimdi</span><h3>Hukuk öğrencisi, denklik adayı, stajyer</h3><p>Madde incelemesi, ders notu düzeni, sınav odaklı araştırma notu. Bugün kendi eğitimimiz için kullandığımız şeyin aynısı. Dağıtımı kolay, hatanın maliyeti sınırlı: ilk ölçüm burada.</p></div>
+        <div class="cell c6 reveal delay1"><span class="tag">2 · 2027</span><h3>Küçük avukat büroları</h3><p>Dosya özeti, dilekçe ilk taslağı, müvekkil yazışması ve atıf doğrulama. Avukat onaylamadan hiçbir çıktı dışarı çıkmaz. Lexpera ve Kazancı'nın yerine değil, üstüne.</p></div>
       </div>
     </div>
   </section>
 
   <section id="yol">
     <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">Yol haritası</div><h2>Ölçmeden büyütmüyoruz</h2></div>
+      <div class="sechead reveal">
+        <div><div class="eyebrow">Yol haritası</div><h2>Ölçmeden <em>büyütmüyoruz.</em></h2></div>
         <p class="lead">Her aşamanın bir ölçütü var. Ölçüt tutmazsa sonraki aşamaya geçilmez.</p>
       </div>
       <div class="road">
-        <div class="card now"><div class="when">2026 Q4 · şimdi</div><h3>Kapalı beta: öğrenci ve stajyer</h3><p>İlk 50 kullanıcı, beş kanun. Ölçüt: doğrulayıcı uyuşmazlık oranı ve haftalık aktif kullanım.</p></div>
-        <div class="card"><div class="when">2027 Q1</div><h3>Büro pilotu</h3><p>Üç küçük büroyla dosya özeti ve dilekçe taslağı. Ölçüt: avukatın düzeltme süresi, atıf hatası sıfır.</p></div>
-        <div class="card"><div class="when">2027 Q2</div><h3>Açık erişim ve entegrasyon</h3><p>Büro şablonları, içtihat kaynaklarından içe aktarma, ekip çalışma alanı. Ölçüt: ödeyen büro sayısı.</p></div>
+        <div class="cell now reveal"><div class="when">2026 Q4 · şimdi</div><h3>Kapalı beta: öğrenci ve stajyer</h3><p>İlk 50 kullanıcı, beş kanun, haftalık geri bildirim.</p><div class="kpi"><b>Ölçüt</b>Doğrulayıcı uyuşmazlık oranı ve haftalık aktif kullanım</div></div>
+        <div class="cell reveal delay1"><div class="when">2027 Q1</div><h3>Büro pilotu</h3><p>Üç küçük büroyla dosya özeti ve dilekçe taslağı; büronun kendi şablonları.</p><div class="kpi"><b>Ölçüt</b>Avukatın düzeltme süresi; atıf hatası sıfır</div></div>
+        <div class="cell reveal delay2"><div class="when">2027 Q2</div><h3>Açık erişim ve entegrasyon</h3><p>İçtihat kaynaklarından içe aktarma, ekip çalışma alanı, kullanım raporları.</p><div class="kpi"><b>Ölçüt</b>Ödeyen büro sayısı</div></div>
       </div>
     </div>
   </section>
 
   <section id="ekip">
     <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">Ekip</div><h2>Hukukçu ve operatör</h2></div>
+      <div class="sechead reveal">
+        <div><div class="eyebrow">Ekip</div><h2>Hukukçu ve <em>operatör.</em></h2></div>
         <p class="lead">Ankara. 2026'da kuruldu, öz kaynakla. İki kurucu, iki dil: hukukun dili ve modelin dili.</p>
       </div>
-      <div class="team">
-        <div class="card"><h3>Hukuk</h3><p>Strasbourg Hukuk Fakültesi mezunu; Ankara Üniversitesi'nde Türk hukuku denklik sürecinde. Avrupa Konseyi HELP ve UNESCO/Oxford'un yapay zekâ ve hukuk programlarına kayıtlı. Ürünün ilk kullanıcısı.</p></div>
-        <div class="card"><h3>Yapay zekâ ve otomasyon</h3><p>Çok ajanlı orkestrasyon, Claude Code iş akışları, ses ve video boru hatları. Madde Motoru'nu ve Doğrulayıcı'yı kuran, ölçen ve işleten taraf.</p></div>
+      <div class="bento">
+        <div class="cell c6 reveal"><span class="tag">Hukuk</span><h3>Strasbourg'dan Ankara'ya</h3><p>Strasbourg Hukuk Fakültesi mezunu; Ankara Üniversitesi'nde Türk hukuku denklik sürecinde. Avrupa Konseyi HELP ve UNESCO/Oxford'un yapay zekâ ve hukuk programlarına kayıtlı. Ürünün ilk kullanıcısı.</p></div>
+        <div class="cell c6 reveal delay1"><span class="tag">Yapay zekâ ve otomasyon</span><h3>Motoru kuran ve işleten</h3><p>Çok ajanlı orkestrasyon, Claude Code iş akışları, ses ve video boru hatları. Madde Motoru'nu ve Doğrulayıcı'yı kuran, ölçen ve işleten taraf.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="sss">
+  <section id="sss" class="faq">
     <div class="wrap">
-      <div class="sechead">
-        <div><div class="eyebrow">SSS</div><h2>Sık sorulanlar</h2></div>
-      </div>
+      <div class="sechead reveal"><div><div class="eyebrow">SSS</div><h2>Sık <em>sorulanlar.</em></h2></div></div>
+      <div class="reveal">
       <details open><summary>Yapay zekâ atıf uyduruyor; siz nasıl önlüyorsunuz?</summary><p>Üç katmanla. Birincisi, metin kaynaktan birebir çekilir; model lafzı yazmaz. İkincisi, bağımsız doğrulayıcı her madde ve fıkra numarasını kaynakla karşılaştırır, uyuşmayanı işaretler. Üçüncüsü, hukukçu onayı. Hiçbiri tek başına yeterli değil; üçü birlikte çalışır.</p></details>
       <details><summary>Lexpera ya da Kazancı'nın yerine mi geçiyor?</summary><p>Hayır. Onlar kaynak; biz kaynağın üstünde çalışan iş akışıyız. Kullanıcı içtihadı oradan alır, Lafız yapılandırır, doğrular ve biçimler.</p></details>
       <details><summary>Hukuki görüş veriyor mu?</summary><p>Vermez. Lafız bir hukukçunun çalışma aracıdır; çıktılar inceleme ve onay için hazırlanır. Anthropic Kullanım Politikası'nın yüksek riskli alan şartlarına göre insan incelemesi ve açıklama akışın parçasıdır.</p></details>
       <details><summary>Belgelerim nerede işleniyor?</summary><p>Belgeler kullanıcının alanında kalır, model eğitiminde kullanılmaz. Saklama süresi ve silme kuralı sözleşmede tanımlıdır; KVKK'ya uygun işlenir.</p></details>
       <details><summary>Neden Claude?</summary><p>Uzun bağlam bir kanunun tamamını tek seferde işlemeye izin veriyor; Türkçe metin kalitesi yüksek; Claude Code ile ajanları orkestre etmek ve doğrulayıcıyı ayrı çağrı olarak çalıştırmak ekonomik.</p></details>
       <details><summary>Ne zaman kullanabilirim?</summary><p>Kapalı beta 2026'nın son çeyreğinde hukuk öğrencileri ve stajyerlerle başlıyor. Erken erişim için aşağıdan yazın; kullanım alanınızı bir cümleyle anlatmanız yeterli.</p></details>
+      </div>
     </div>
   </section>
 
-  <section id="en">
+  <section id="en" style="padding-top:0">
     <div class="wrap">
-      <div class="en">
+      <div class="en reveal">
         <div class="lang">EN</div>
         <div>
-          <p><b>Lafız</b> is a source-faithful legal AI workflow engine for Turkish law, built on Claude. A writer agent drafts article-by-article analysis from the verbatim statute text pulled from mevzuat.gov.tr; an independent verifier agent checks every citation and clause number; a qualified lawyer signs off before anything leaves the system.</p>
+          <p><b>Lafız</b> is a source-faithful legal AI workflow engine for Turkish law, built on Claude. A writer agent drafts article-by-article analysis from the verbatim statute text pulled from mevzuat.gov.tr; an independent verifier agent checks every citation and clause number against the source; a qualified lawyer signs off before anything leaves the system.</p>
           <p>Already in production for our own legal studies since August 2026: 1,500+ article entries across five codes and roughly 2,100 pages of lecture notes transcribed. First users are law students and trainee lawyers in Türkiye; small law firms follow in 2027 with case summaries and first-draft pleadings, always with lawyer review and AI disclosure in line with Anthropic's high-risk use policy.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="iletisim" class="contact">
+  <section id="iletisim" class="cta">
     <div class="wrap">
-      <div>
-        <div class="eyebrow">Erken erişim</div>
-        <h2>Kapalı betaya katılın</h2>
-        <p style="margin-top:14px;max-width:48ch">Hukuk öğrencisi, stajyer ya da küçük bir büroysanız yazın. Kullanım alanınızı bir cümleyle anlatın; sırayla dönüyoruz.</p>
-      </div>
-      <div>
-        <p><a class="btn" href="mailto:info@lafizai.com?subject=Lafız%20erken%20erişim">info@lafizai.com</a></p>
-        <p class="meta" style="margin-top:18px">Ankara, Türkiye<br>Claude (Anthropic) üzerinde çalışır<br><a href="https://github.com/sergionlinee/lafiz-site">github.com/sergionlinee</a></p>
+      <div class="box reveal">
+        <div class="eyebrow" style="justify-content:center">Erken erişim</div>
+        <h2>Kapalı betaya <em>katılın.</em></h2>
+        <p>Hukuk öğrencisi, stajyer ya da küçük bir büroysanız yazın. Kullanım alanınızı bir cümleyle anlatın; sırayla dönüyoruz.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:info@lafizai.com?subject=Lafız%20erken%20erişim">info@lafizai.com</a>
+          <a class="btn ghost" href="https://github.com/sergionlinee/lafiz-site">GitHub</a>
+        </div>
+        <div class="meta">Ankara, Türkiye · Claude (Anthropic) üzerinde çalışır</div>
       </div>
     </div>
   </section>
@@ -390,5 +458,69 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  // theme
+  var root=document.documentElement, key='lafiz-theme';
+  try{ var saved=localStorage.getItem(key); if(saved) root.setAttribute('data-theme',saved); }catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',cur); try{localStorage.setItem(key,cur)}catch(e){}
+  });
+
+  // marquee duplicate
+  var tr=document.getElementById('track'); tr.innerHTML+=tr.innerHTML;
+
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  // counters
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(n){return n.toLocaleString('tr-TR')}
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return; co.unobserve(e.target);
+    var el=e.target,to=+el.dataset.count,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+    if(reduce){el.textContent=pre+fmt(to)+suf;return}
+    var t0=performance.now(),d=1200;
+    (function step(t){var p=Math.min(1,(t-t0)/d),v=Math.round(to*(1-Math.pow(1-p,3)));el.textContent=pre+fmt(v)+suf;if(p<1)requestAnimationFrame(step)})(t0);
+  })},{threshold:.4});
+  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el)});
+
+  // spotlight on cells
+  document.querySelectorAll('.cell').forEach(function(c){c.addEventListener('pointermove',function(ev){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(ev.clientX-r.left)+'px');c.style.setProperty('--my',(ev.clientY-r.top)+'px')})});
+
+  // live console
+  var runs=[
+    {id:'TBK 138',title:'TBK 138 : Aşırı ifa güçlüğü',law:'Sözleşmenin yapıldığı sırada taraflarca öngörülmeyen ve öngörülmesi de beklenmeyen olağanüstü bir durum … borçlu, hâkimden sözleşmenin yeni koşullara uyarlanmasını isteme, bu mümkün olmadığı takdirde sözleşmeden dönme hakkına sahiptir.',k1:'(1) olağanüstü ve öngörülemez durum · (2) borçludan kaynaklanmama · (3) dürüstlük kuralına aykırı ağırlaşma · (4) ifa edilmemiş ya da hak saklı tutularak ifa',k2:'TBK 136 ifa imkânsızlığı ile sınır · TMK 2 dürüstlük kuralı',n:4},
+    {id:'TMK 2',title:'TMK 2 : Dürüst davranma',law:'Herkes, haklarını kullanırken ve borçlarını yerine getirirken dürüstlük kurallarına uymak zorundadır. Bir hakkın açıkça kötüye kullanılmasını hukuk düzeni korumaz.',k1:'(1) hakkın kullanımı ya da borcun ifası · (2) dürüstlük kuralına aykırılık · (3) açık kötüye kullanma',k2:'TMK 3 iyiniyet · TBK 138 uyarlama ölçütü · TMK 1 boşluk doldurma',n:3},
+    {id:'TTK 18',title:'TTK 18 : Tacir olmanın hükümleri',law:'Tacir, her türlü borcu için iflasa tabidir; ayrıca kanuna uygun bir ticaret unvanı seçmek, ticari işletmesini ticaret siciline tescil ettirmek ve bu Kanun hükümleri uyarınca gerekli ticari defterleri tutmakla da yükümlüdür.',k1:'(1) iflasa tabi olma · (2) ticaret unvanı · (3) sicile tescil · (4) ticari defter · basiretli iş adamı ölçüsü',k2:'TTK 11 ticari işletme · İİK 43 iflasa tabi olanlar · TTK 39 unvan',n:3}
+  ];
+  var log=document.getElementById('log'),stamp=document.getElementById('stamp'),i=0;
+  function line(t,k,v,cls){var d=document.createElement('div');d.className='ln';d.innerHTML='<span class="t">'+t+'</span><span class="k">'+k+'</span><span class="v '+(cls||'')+'">'+v+'</span>';log.appendChild(d);requestAnimationFrame(function(){d.classList.add('on')});return d}
+  function run(){
+    var r=runs[i%runs.length]; i++;
+    log.innerHTML=''; stamp.classList.remove('on');
+    document.getElementById('ctitle').textContent='madde-motoru · '+r.id;
+    document.getElementById('oart').textContent=r.title; document.getElementById('olaw').textContent=r.law;
+    document.getElementById('o1').textContent=r.k1; document.getElementById('o2').textContent=r.k2;
+    var steps=[
+      [0,'00.0s','kaynak','mevzuat.gov.tr → <b>'+r.id+'</b> lafzı çekildi'],
+      [700,'00.4s','yazıcı','yedi başlıklı yapı yazılıyor<span class="cursor"></span>'],
+      [1900,'01.6s','yazıcı','taslak hazır · <b>'+r.n+' atıf</b>'],
+      [2600,'01.9s','doğrulayıcı','atıflar kaynakla karşılaştırılıyor<span class="cursor"></span>'],
+      [3900,'02.8s','doğrulayıcı','<b>'+r.n+'/'+r.n+' eşleşti</b> · 0 uyuşmazlık','ok'],
+      [4500,'03.0s','çıktı','DOCX hazır · hukukçu onayına gönderildi','ok']
+    ];
+    steps.forEach(function(s){setTimeout(function(){
+      var prev=log.querySelector('.cursor'); if(prev) prev.classList.remove('cursor');
+      line(s[1],s[2],s[3],s[4]); if(s[2]==='çıktı') stamp.classList.add('on');
+    },s[0])});
+    setTimeout(run,8200);
+  }
+  if(reduce){ line('00.0s','kaynak','mevzuat.gov.tr → <b>TBK 138</b> lafzı çekildi'); line('01.6s','yazıcı','taslak hazır · <b>4 atıf</b>'); line('02.8s','doğrulayıcı','<b>4/4 eşleşti</b> · 0 uyuşmazlık','ok'); line('03.0s','çıktı','DOCX hazır · hukukçu onayına gönderildi','ok'); stamp.classList.add('on'); }
+  else run();
+})();
+</script>
 </body>
 </html>
